@@ -10,8 +10,12 @@ import SceneKit
 import ARKit
 
 class ViewController: UIViewController, ARSCNViewDelegate {
-
+    
     @IBOutlet var sceneView: ARSCNView!
+    
+    var loading: UIAlertController!
+    var loadingIndicator: UIActivityIndicatorView!
+    var downloadString: String = "Downloading"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +26,21 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
         
-        // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
-        // Set the scene to the view
-        sceneView.scene = scene
+        DispatchQueue.global(qos: .background).async { [unowned self] in
+            if let url = URL(string: "https://github.com/dmitryshliugaev/metal/raw/main/Models/Mushroom.scn") {
+                if let scene = try? SCNScene(url: url) {
+                    
+                    
+                    if let node = scene.rootNode.childNode(withName: "Cylinder-002", recursively: true) {
+                        node.geometry?.firstMaterial?.diffuse.contents = "https://github.com/dmitryshliugaev/metal/raw/main/Models/MushroomTexture.png"
+                    }
+                    
+                    DispatchQueue.main.async { [unowned self] in
+                        sceneView.scene = scene
+                    }
+                }
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,7 +48,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-
+        
         // Run the view's session
         sceneView.session.run(configuration)
     }
@@ -45,17 +59,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Pause the view's session
         sceneView.session.pause()
     }
-
+    
     // MARK: - ARSCNViewDelegate
     
-/*
-    // Override to create and configure nodes for anchors added to the view's session.
-    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
-        let node = SCNNode()
+    /*
+     // Override to create and configure nodes for anchors added to the view's session.
+     func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+     let node = SCNNode()
      
-        return node
-    }
-*/
+     return node
+     }
+     */
     
     func session(_ session: ARSession, didFailWithError error: Error) {
         // Present an error message to the user
@@ -72,3 +86,5 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
     }
 }
+
+
