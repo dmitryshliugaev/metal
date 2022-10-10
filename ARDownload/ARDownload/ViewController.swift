@@ -25,22 +25,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Show statistics such as fps and timing information
         sceneView.showsStatistics = true
-        
-        DispatchQueue.global(qos: .background).async { [unowned self] in
-            if let url = URL(string: "https://github.com/dmitryshliugaev/metal/raw/main/Models/Mushroom.scn") {
-                if let scene = try? SCNScene(url: url) {
-                    
-                    
-                    if let node = scene.rootNode.childNode(withName: "Cylinder-002", recursively: true) {
-                        node.geometry?.firstMaterial?.diffuse.contents = "https://github.com/dmitryshliugaev/metal/raw/main/Models/MushroomTexture.png"
-                    }
-                    
-                    DispatchQueue.main.async { [unowned self] in
-                        sceneView.scene = scene
-                    }
-                }
-            }
+        if let scene = SCNScene(named: "art.scnassets/ship.scn") {
+            sceneView.scene = scene
         }
+//
+//
+//        DispatchQueue.global(qos: .background).async { [unowned self] in
+//            if let url = URL(string: "https://github.com/dmitryshliugaev/metal/raw/main/Models/Mushroom.scn") {
+//                if let scene = try? SCNScene(url: url) {
+//
+//
+//                    if let node = scene.rootNode.childNode(withName: "Cylinder-002", recursively: true) {
+//                        node.geometry?.firstMaterial?.diffuse.contents = "https://github.com/dmitryshliugaev/metal/raw/main/Models/MushroomTexture.png"
+//                    }
+//
+//                    DispatchQueue.main.async { [unowned self] in
+//                        sceneView.scene = scene
+//                    }
+//                }
+//            }
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
