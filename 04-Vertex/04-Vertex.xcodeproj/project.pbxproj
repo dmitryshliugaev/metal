@@ -15,6 +15,7 @@
 		729C708328F494840065954E /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729C708228F494840065954E /* Renderer.swift */; };
 		729C708528F4949C0065954E /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 729C708428F4949C0065954E /* Shaders.metal */; };
 		729C708728F49F5A0065954E /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729C708628F49F5A0065954E /* Quad.swift */; };
+		729C708928F5A0A30065954E /* VertexDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 729C708828F5A0A30065954E /* VertexDescriptor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		729C708228F494840065954E /* Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		729C708428F4949C0065954E /* Shaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		729C708628F49F5A0065954E /* Quad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quad.swift; sourceTree = "<group>"; };
+		729C708828F5A0A30065954E /* VertexDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertexDescriptor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				729C708228F494840065954E /* Renderer.swift */,
 				729C708428F4949C0065954E /* Shaders.metal */,
 				729C708628F49F5A0065954E /* Quad.swift */,
+				729C708828F5A0A30065954E /* VertexDescriptor.swift */,
 			);
 			path = "04-Vertex";
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				729C708928F5A0A30065954E /* VertexDescriptor.swift in Sources */,
 				729C708728F49F5A0065954E /* Quad.swift in Sources */,
 				729C708328F494840065954E /* Renderer.swift in Sources */,
 				729C708128F494570065954E /* MetalView.swift in Sources */,
