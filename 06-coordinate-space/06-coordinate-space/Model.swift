@@ -8,9 +8,10 @@
 
 import MetalKit
 
-class Model {
+class Model: Transformable {
   let mesh: MTKMesh
   let name: String
+    var transform = Transform()
 
   init(device: MTLDevice, name: String) {
     guard let assetURL = Bundle.main.url(

@@ -29,11 +29,6 @@ class Renderer: NSObject {
             fatalError("GPU not available")
         }
         
-        let translation = float4x4(translation: [0.5, -0.4, 0])
-        let rotation =
-        float4x4(rotation: [0, 0, Float(45).degreesToRadians])
-        uniforms.modelMatrix = translation * rotation
-        
         Renderer.device = device
         Renderer.commandQueue = commandQueue
         metalView.device = device
@@ -68,6 +63,10 @@ class Renderer: NSObject {
             blue: 0.9,
             alpha: 1.0)
         metalView.delegate = self
+        
+        mtkView(
+          metalView,
+          drawableSizeWillChange: metalView.bounds.size)
     }
 }
 
@@ -75,7 +74,17 @@ extension Renderer: MTKViewDelegate {
     func mtkView(
         _ view: MTKView,
         drawableSizeWillChange size: CGSize
-    ) { }
+    ) {
+        let aspect =
+          Float(view.bounds.width) / Float(view.bounds.height)
+        let projectionMatrix =
+          float4x4(
+            projectionFov: Float(70).degreesToRadians,
+            near: 0.1,
+            far: 100,
+            aspect: aspect)
+        uniforms.projectionMatrix = projectionMatrix
+    }
     
     func draw(in view: MTKView) {
         guard
@@ -87,8 +96,16 @@ extension Renderer: MTKViewDelegate {
             return
         }
         
+        uniforms.viewMatrix = float4x4(translation: [0.8, 0, 0]).inverse
+        
         renderEncoder.setRenderPipelineState(pipelineState)
-        renderEncoder.setTriangleFillMode(.lines)
+        
+        timer += 0.005
+        uniforms.viewMatrix = float4x4(translation: [0, 0, -3]).inverse
+        
+        model.position.y = -0.6
+        model.rotation.y = sin(timer)
+        uniforms.modelMatrix = model.transform.modelMatrix
         
         renderEncoder.setVertexBytes(
           &uniforms,
