@@ -24,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		725BD8E2290074DD00552034 /* ShaderDefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderDefs.h; sourceTree = "<group>"; };
 		72A11EEB28FDD3FC009F7EFD /* 07-Fragment-function.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "07-Fragment-function.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A11EEE28FDD3FC009F7EFD /* _7_Fragment_functionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _7_Fragment_functionApp.swift; sourceTree = "<group>"; };
 		72A11EF028FDD3FC009F7EFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +88,7 @@
 				72A11F0B28FDD592009F7EFD /* MetalView.swift */,
 				72A11F0D28FDD5A5009F7EFD /* Options.swift */,
 				72A11F0F28FDD5FA009F7EFD /* train.usd */,
+				725BD8E2290074DD00552034 /* ShaderDefs.h */,
 			);
 			path = "07-Fragment-function";
 			sourceTree = "<group>";

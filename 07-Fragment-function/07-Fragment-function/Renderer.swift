@@ -26,6 +26,8 @@ class Renderer: NSObject {
     
     var params = Params()
     
+    let depthStencilState: MTLDepthStencilState?
+    
     init(metalView: MTKView, options: Options) {
         guard
             let device = MTLCreateSystemDefaultDevice(),
@@ -48,8 +50,8 @@ class Renderer: NSObject {
         let pipelineDescriptor = MTLRenderPipelineDescriptor()
         pipelineDescriptor.vertexFunction = quadVertexFunction
         pipelineDescriptor.fragmentFunction = fragmentFunction
-        pipelineDescriptor.colorAttachments[0].pixelFormat =
-        metalView.colorPixelFormat
+        pipelineDescriptor.colorAttachments[0].pixelFormat = metalView.colorPixelFormat
+        pipelineDescriptor.depthAttachmentPixelFormat = .depth32Float
         do {
             quadPipelineState =
             try device.makeRenderPipelineState(
@@ -64,14 +66,27 @@ class Renderer: NSObject {
             fatalError(error.localizedDescription)
         }
         self.options = options
+        depthStencilState = Renderer.buildDepthStencilState()
         super.init()
         metalView.clearColor = MTLClearColor(
             red: 1.0,
             green: 1.0,
             blue: 0.9,
             alpha: 1.0)
+        metalView.depthStencilPixelFormat = .depth32Float
         metalView.delegate = self
         mtkView(metalView, drawableSizeWillChange: metalView.bounds.size)
+    }
+    
+    static func buildDepthStencilState() -> MTLDepthStencilState? {
+    // 1
+      let descriptor = MTLDepthStencilDescriptor()
+    // 2
+      descriptor.depthCompareFunction = .less
+    // 3
+      descriptor.isDepthWriteEnabled = true
+      return Renderer.device.makeDepthStencilState(
+        descriptor: descriptor)
     }
 }
 
@@ -105,7 +120,7 @@ extension Renderer: MTKViewDelegate {
         encoder.setVertexBytes(
             &uniforms,
             length: MemoryLayout<Uniforms>.stride,
-            index: 11)
+            index: Int(UniformsBuffer.rawValue))
         
         model.render(encoder: encoder)
     }
@@ -125,10 +140,12 @@ extension Renderer: MTKViewDelegate {
             return
         }
         
+        renderEncoder.setDepthStencilState(depthStencilState)
+        
         renderEncoder.setFragmentBytes(
           &params,
           length: MemoryLayout<Uniforms>.stride,
-          index: 12)
+          index: Int(ParamsBuffer.rawValue))
         
         if options.renderChoice == .train {
             renderModel(encoder: renderEncoder)
