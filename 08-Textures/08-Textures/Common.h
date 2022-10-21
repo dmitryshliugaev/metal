@@ -34,4 +34,8 @@ typedef enum {
     ParamsBuffer = 12
 } BufferIndices;
 
+typedef enum {
+  BaseColor = 0
+} TextureIndices;
+
 #endif /* Common_h */

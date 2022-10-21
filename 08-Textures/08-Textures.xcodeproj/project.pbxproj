@@ -29,6 +29,7 @@
 		725BD9232903D3F600552034 /* MathLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725BD9222903D3F600552034 /* MathLibrary.swift */; };
 		725BD9252903D41E00552034 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725BD9242903D41E00552034 /* MetalView.swift */; };
 		725BD9272903D43300552034 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725BD9262903D43300552034 /* Options.swift */; };
+		A0BE107329042216004B3A5B /* TextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BE107229042216004B3A5B /* TextureController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		725BD9222903D3F600552034 /* MathLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathLibrary.swift; sourceTree = "<group>"; };
 		725BD9242903D41E00552034 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		725BD9262903D43300552034 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		A0BE107229042216004B3A5B /* TextureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				725BD9222903D3F600552034 /* MathLibrary.swift */,
 				725BD9242903D41E00552034 /* MetalView.swift */,
 				725BD9262903D43300552034 /* Options.swift */,
+				A0BE107229042216004B3A5B /* TextureController.swift */,
 			);
 			path = "08-Textures";
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				725BD90B2903D37E00552034 /* Shaders.metal in Sources */,
 				725BD9082903D32C00552034 /* VertexDescriptor.swift in Sources */,
 				725BD9002903D29A00552034 /* Model.swift in Sources */,
+				A0BE107329042216004B3A5B /* TextureController.swift in Sources */,
 				725BD9232903D3F600552034 /* MathLibrary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -39,10 +39,12 @@ vertex VertexOut vertex_main(
 
 fragment float4 fragment_main(
                               constant Params &params [[buffer(ParamsBuffer)]],
-                              VertexOut in [[stage_in]])
+                              VertexOut in [[stage_in]],
+                              texture2d<float> baseColorTexture [[texture(BaseColor)]])
 {
-    float4 sky = float4(0.34, 0.9, 1.0, 1.0);
-    float4 earth = float4(0.29, 0.58, 0.2, 1.0);
-    float intensity = in.normal.y * 0.5 + 0.5;
-    return mix(earth, sky, intensity);
+    constexpr sampler textureSampler;
+    float3 baseColor = baseColorTexture.sample(
+      textureSampler,
+      in.uv).rgb;
+    return float4(baseColor, 1);
 }

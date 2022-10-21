@@ -66,6 +66,9 @@ extension Model {
             }
             
             for submesh in mesh.submeshes {
+                encoder.setFragmentTexture(
+                  submesh.textures.baseColor,
+                  index: BaseColor.index)
                 
                 // set the fragment texture here
                 
