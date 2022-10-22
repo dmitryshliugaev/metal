@@ -12,6 +12,7 @@ class Model: Transformable {
     var transform = Transform()
     let meshes: [Mesh]
     let name: String
+    var tiling: UInt32 = 1
     
     init(name: String) {
         guard let assetURL = Bundle.main.url(
@@ -44,6 +45,7 @@ extension Model {
     ) {
         var uniforms = vertex
         var params = fragment
+        params.tiling = tiling
         
         uniforms.modelMatrix = transform.modelMatrix
         

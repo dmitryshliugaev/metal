@@ -42,9 +42,11 @@ fragment float4 fragment_main(
                               VertexOut in [[stage_in]],
                               texture2d<float> baseColorTexture [[texture(BaseColor)]])
 {
-    constexpr sampler textureSampler;
+    constexpr sampler textureSampler(
+      filter::linear,
+      address::repeat);
     float3 baseColor = baseColorTexture.sample(
       textureSampler,
-      in.uv).rgb;
+      in.uv * params.tiling).rgb;
     return float4(baseColor, 1);
 }

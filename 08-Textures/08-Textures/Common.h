@@ -19,6 +19,7 @@ typedef struct {
 typedef struct {
     uint width;
     uint height;
+    uint tiling;
 } Params;
 
 typedef enum {

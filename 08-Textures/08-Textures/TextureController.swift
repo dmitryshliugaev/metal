@@ -15,8 +15,10 @@ enum TextureController {
         // 1
         let textureLoader = MTKTextureLoader(device: Renderer.device)
         // 2
-        let textureLoaderOptions: [MTKTextureLoader.Option: Any] =
-        [.origin: MTKTextureLoader.Origin.bottomLeft]
+        let textureLoaderOptions: [MTKTextureLoader.Option: Any] = [
+          .origin: MTKTextureLoader.Origin.bottomLeft,
+          .SRGB: false
+        ]
         // 3
         let fileExtension =
         URL(fileURLWithPath: filename).pathExtension.isEmpty ?
