@@ -30,6 +30,7 @@
 		725BD9252903D41E00552034 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725BD9242903D41E00552034 /* MetalView.swift */; };
 		725BD9272903D43300552034 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725BD9262903D43300552034 /* Options.swift */; };
 		A0BE107329042216004B3A5B /* TextureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BE107229042216004B3A5B /* TextureController.swift */; };
+		A0BE10752905B257004B3A5B /* Textures.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0BE10742905B257004B3A5B /* Textures.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		725BD9242903D41E00552034 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		725BD9262903D43300552034 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		A0BE107229042216004B3A5B /* TextureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureController.swift; sourceTree = "<group>"; };
+		A0BE10742905B257004B3A5B /* Textures.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Textures.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				725BD9242903D41E00552034 /* MetalView.swift */,
 				725BD9262903D43300552034 /* Options.swift */,
 				A0BE107229042216004B3A5B /* TextureController.swift */,
+				A0BE10742905B257004B3A5B /* Textures.xcassets */,
 			);
 			path = "08-Textures";
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				725BD91F2903D3DC00552034 /* lowpoly-house-color.png in Resources */,
 				725BD9212903D3DC00552034 /* lowpoly-house.mtl in Resources */,
 				725BD8F42903D25C00552034 /* Assets.xcassets in Resources */,
+				A0BE10752905B257004B3A5B /* Textures.xcassets in Resources */,
 				725BD91B2903D3DC00552034 /* lowpoly-barn-color.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

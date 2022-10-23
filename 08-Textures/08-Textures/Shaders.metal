@@ -43,10 +43,12 @@ fragment float4 fragment_main(
                               texture2d<float> baseColorTexture [[texture(BaseColor)]])
 {
     constexpr sampler textureSampler(
-      filter::linear,
-      address::repeat);
+                                     filter::linear,
+                                     address::repeat,
+                                     mip_filter::linear,
+                                     max_anisotropy(8));
     float3 baseColor = baseColorTexture.sample(
-      textureSampler,
-      in.uv * params.tiling).rgb;
+                                               textureSampler,
+                                               in.uv * params.tiling).rgb;
     return float4(baseColor, 1);
 }
