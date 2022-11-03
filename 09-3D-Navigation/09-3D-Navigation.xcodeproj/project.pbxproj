@@ -27,6 +27,7 @@
 		7229C7E12912637600578E30 /* MathLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229C7E02912637600578E30 /* MathLibrary.swift */; };
 		7229C7E3291263A300578E30 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229C7E2291263A300578E30 /* MetalView.swift */; };
 		725D5D922912E6AE00C0D6BE /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725D5D912912E6AE00C0D6BE /* GameScene.swift */; };
+		725D5D9429156F9600C0D6BE /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725D5D9329156F9500C0D6BE /* Camera.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		7229C7E02912637600578E30 /* MathLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathLibrary.swift; sourceTree = "<group>"; };
 		7229C7E2291263A300578E30 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		725D5D912912E6AE00C0D6BE /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		725D5D9329156F9500C0D6BE /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +88,11 @@
 			children = (
 				7229C7D42912636700578E30 /* Models */,
 				7229C7D32912636700578E30 /* Textures.xcassets */,
+				725D5D9329156F9500C0D6BE /* Camera.swift */,
 				725D5D912912E6AE00C0D6BE /* GameScene.swift */,
+				7229C7C22912627700578E30 /* Renderer.swift */,
 				7229C7B429125A2900578E30 /* _9_3D_NavigationApp.swift */,
 				7229C7B629125A2900578E30 /* ContentView.swift */,
-				7229C7C22912627700578E30 /* Renderer.swift */,
 				7229C7C42912628E00578E30 /* Model.swift */,
 				7229C7C6291262A600578E30 /* Transform.swift */,
 				7229C7C8291262B800578E30 /* Mesh.swift */,
@@ -228,6 +231,7 @@
 				7229C7CB291262C900578E30 /* Submesh.swift in Sources */,
 				7229C7B529125A2900578E30 /* _9_3D_NavigationApp.swift in Sources */,
 				7229C7CD291262D700578E30 /* VertexDescriptor.swift in Sources */,
+				725D5D9429156F9600C0D6BE /* Camera.swift in Sources */,
 				7229C7C52912628E00578E30 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
