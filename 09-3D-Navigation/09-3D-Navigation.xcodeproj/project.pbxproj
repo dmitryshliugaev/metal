@@ -28,6 +28,8 @@
 		7229C7E3291263A300578E30 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7229C7E2291263A300578E30 /* MetalView.swift */; };
 		725D5D922912E6AE00C0D6BE /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725D5D912912E6AE00C0D6BE /* GameScene.swift */; };
 		725D5D9429156F9600C0D6BE /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725D5D9329156F9500C0D6BE /* Camera.swift */; };
+		725D5D962916D7D600C0D6BE /* InputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725D5D952916D7D600C0D6BE /* InputController.swift */; };
+		725D5D982916DB4900C0D6BE /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725D5D972916DB4900C0D6BE /* Movement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		7229C7E2291263A300578E30 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		725D5D912912E6AE00C0D6BE /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		725D5D9329156F9500C0D6BE /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		725D5D952916D7D600C0D6BE /* InputController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputController.swift; sourceTree = "<group>"; };
+		725D5D972916DB4900C0D6BE /* Movement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 				7229C7E02912637600578E30 /* MathLibrary.swift */,
 				7229C7B829125A2A00578E30 /* Assets.xcassets */,
 				7229C7BA29125A2A00578E30 /* Preview Content */,
+				725D5D952916D7D600C0D6BE /* InputController.swift */,
+				725D5D972916DB4900C0D6BE /* Movement.swift */,
 			);
 			path = "09-3D-Navigation";
 			sourceTree = "<group>";
@@ -222,6 +228,8 @@
 				7229C7E3291263A300578E30 /* MetalView.swift in Sources */,
 				7229C7CF291262E800578E30 /* TextureController.swift in Sources */,
 				7229C7C9291262B800578E30 /* Mesh.swift in Sources */,
+				725D5D962916D7D600C0D6BE /* InputController.swift in Sources */,
+				725D5D982916DB4900C0D6BE /* Movement.swift in Sources */,
 				7229C7B729125A2900578E30 /* ContentView.swift in Sources */,
 				7229C7C32912627700578E30 /* Renderer.swift in Sources */,
 				7229C7D22912631300578E30 /* Shaders.metal in Sources */,

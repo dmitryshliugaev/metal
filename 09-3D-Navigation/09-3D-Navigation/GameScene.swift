@@ -23,7 +23,11 @@ struct GameScene {
     
     mutating func update(deltaTime: Float) {
         ground.scale = 40
-        camera.rotation.y = sin(deltaTime)
+        camera.update(deltaTime: deltaTime)
+
+        if InputController.shared.keysPressed.contains(.keyH) {
+          print("H key pressed")
+        }
     }
     
     init() {
