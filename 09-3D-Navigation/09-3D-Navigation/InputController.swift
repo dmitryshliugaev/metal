@@ -11,8 +11,34 @@ class InputController {
     var keysPressed: Set<GCKeyCode> = []
     static let shared = InputController()
     
+    var leftMouseDown = false
+    var mouseDelta = Point.zero
+    var mouseScroll = Point.zero
+    
     private init() {
         let center = NotificationCenter.default
+        
+        center.addObserver(
+            forName: .GCMouseDidConnect,
+            object: nil,
+            queue: nil) { notification in
+                let mouse = notification.object as? GCMouse
+                
+                // 1
+                mouse?.mouseInput?.leftButton.pressedChangedHandler = { _, _, pressed in
+                    self.leftMouseDown = pressed
+                }
+                // 2
+                mouse?.mouseInput?.mouseMovedHandler = { _, deltaX, deltaY in
+                    self.mouseDelta = Point(x: deltaX, y: deltaY)
+                }
+                // 3
+                mouse?.mouseInput?.scroll.valueChangedHandler = { _, xValue, yValue in
+                    self.mouseScroll.x = xValue
+                    self.mouseScroll.y = yValue
+                }
+            }
+        
         center.addObserver(
             forName: .GCKeyboardDidConnect,
             object: nil,
@@ -28,4 +54,10 @@ class InputController {
                 }
             }
     }
+}
+
+struct Point {
+    var x: Float
+    var y: Float
+    static let zero = Point(x: 0, y: 0)
 }

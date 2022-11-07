@@ -19,7 +19,7 @@ struct GameScene {
     }()
     lazy var models: [Model] = [ground, house]
     
-    var camera = FPCamera()
+    var camera = ArcballCamera()
     
     mutating func update(deltaTime: Float) {
         ground.scale = 40
@@ -32,6 +32,8 @@ struct GameScene {
     
     init() {
         camera.position = [0, 1.5, -5]
+        camera.distance = length(camera.position)
+        camera.target = [0, 1.2, 0]
     }
     
     mutating func update(size: CGSize) {
