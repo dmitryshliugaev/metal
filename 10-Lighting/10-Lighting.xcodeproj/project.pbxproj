@@ -33,6 +33,7 @@
 		723B326E291E80DB004314E9 /* DebugLights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723B326B291E80DB004314E9 /* DebugLights.swift */; };
 		723B326F291E80DB004314E9 /* DebugLights.metal in Sources */ = {isa = PBXBuildFile; fileRef = 723B326C291E80DB004314E9 /* DebugLights.metal */; };
 		723B3270291E80DB004314E9 /* MathLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723B326D291E80DB004314E9 /* MathLibrary.swift */; };
+		723B3285291FA670004314E9 /* SceneLighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723B3284291FA670004314E9 /* SceneLighting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		723B327B291E8198004314E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		723B327E291E8198004314E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		723B3280291E8198004314E9 /* _0_LightingMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = _0_LightingMac.entitlements; sourceTree = "<group>"; };
+		723B3284291FA670004314E9 /* SceneLighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLighting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				723B325A291E8055004314E9 /* TextureController.swift */,
 				723B325C291E8072004314E9 /* Textures.xcassets */,
 				723B325E291E8088004314E9 /* Common.h */,
+				723B3284291FA670004314E9 /* SceneLighting.swift */,
 				723B325F291E80BD004314E9 /* Shaders.metal */,
 				723B3236291E7E19004314E9 /* Assets.xcassets */,
 				723B3238291E7E19004314E9 /* Preview Content */,
@@ -286,6 +289,7 @@
 				723B3249291E7F8E004314E9 /* Camera.swift in Sources */,
 				723B324F291E7FD6004314E9 /* InputController.swift in Sources */,
 				723B3233291E7E17004314E9 /* _0_LightingApp.swift in Sources */,
+				723B3285291FA670004314E9 /* SceneLighting.swift in Sources */,
 				723B3270291E80DB004314E9 /* MathLibrary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

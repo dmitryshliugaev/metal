@@ -20,6 +20,8 @@ struct VertexOut {
     float4 position [[position]];
     float2 uv;
     float3 color;
+    float3 worldPosition;
+    float3 worldNormal;
 };
 
 vertex VertexOut vertex_main(
@@ -33,6 +35,8 @@ vertex VertexOut vertex_main(
         .position = position,
         .uv = in.uv,
         .color = in.color,
+        .worldPosition = (uniforms.modelMatrix * in.position).xyz,
+        .worldNormal = uniforms.normalMatrix * in.normal
     };
     return out;
 }
@@ -40,7 +44,8 @@ vertex VertexOut vertex_main(
 fragment float4 fragment_main(
                               VertexOut in [[stage_in]],
                               constant Params &params [[buffer(ParamsBuffer)]],
-                              texture2d<float> baseColorTexture [[texture(BaseColor)]])
+                              texture2d<float> baseColorTexture [[texture(BaseColor)]],
+                              constant Light *lights [[buffer(LightBuffer)]],)
 {
     constexpr sampler textureSampler(
                                      filter::linear,

@@ -23,6 +23,8 @@ struct GameScene {
             rotation: [-0.73, 13.3, 0.0])
     }
     
+    let lighting = SceneLighting()
+    
     init() {
         camera.distance = 2.5
         camera.transform = defaultView
