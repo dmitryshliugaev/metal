@@ -7,7 +7,7 @@
 
 #include <metal_stdlib>
 using namespace metal;
-#import "Common.h"
+#import "Lighting.h"
 
 struct VertexIn {
     float4 position [[attribute(Position)]];
@@ -45,7 +45,7 @@ fragment float4 fragment_main(
                               VertexOut in [[stage_in]],
                               constant Params &params [[buffer(ParamsBuffer)]],
                               texture2d<float> baseColorTexture [[texture(BaseColor)]],
-                              constant Light *lights [[buffer(LightBuffer)]],)
+                              constant Light *lights [[buffer(LightBuffer)]])
 {
     constexpr sampler textureSampler(
                                      filter::linear,
@@ -61,5 +61,13 @@ fragment float4 fragment_main(
                                             textureSampler,
                                             in.uv * params.tiling).rgb;
     }
-    return float4(baseColor, 1);
+    float3 normalDirection = normalize(in.worldNormal);
+    float3 color = phongLighting(
+      normalDirection,
+      in.worldPosition,
+      params,
+      lights,
+      baseColor
+    );
+    return float4(color, 1);
 }

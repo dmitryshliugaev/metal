@@ -34,6 +34,7 @@
 		723B326F291E80DB004314E9 /* DebugLights.metal in Sources */ = {isa = PBXBuildFile; fileRef = 723B326C291E80DB004314E9 /* DebugLights.metal */; };
 		723B3270291E80DB004314E9 /* MathLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723B326D291E80DB004314E9 /* MathLibrary.swift */; };
 		723B3285291FA670004314E9 /* SceneLighting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723B3284291FA670004314E9 /* SceneLighting.swift */; };
+		723B3288292025D4004314E9 /* Lighting.metal in Sources */ = {isa = PBXBuildFile; fileRef = 723B3287292025D4004314E9 /* Lighting.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,8 @@
 		723B327E291E8198004314E9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		723B3280291E8198004314E9 /* _0_LightingMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = _0_LightingMac.entitlements; sourceTree = "<group>"; };
 		723B3284291FA670004314E9 /* SceneLighting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLighting.swift; sourceTree = "<group>"; };
+		723B3286292025A9004314E9 /* Lighting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Lighting.h; sourceTree = "<group>"; };
+		723B3287292025D4004314E9 /* Lighting.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Lighting.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +126,8 @@
 				723B325E291E8088004314E9 /* Common.h */,
 				723B3284291FA670004314E9 /* SceneLighting.swift */,
 				723B325F291E80BD004314E9 /* Shaders.metal */,
+				723B3286292025A9004314E9 /* Lighting.h */,
+				723B3287292025D4004314E9 /* Lighting.metal */,
 				723B3236291E7E19004314E9 /* Assets.xcassets */,
 				723B3238291E7E19004314E9 /* Preview Content */,
 				723B3240291E7E97004314E9 /* MetalView.swift */,
@@ -279,6 +284,7 @@
 				723B3255291E8023004314E9 /* Transform.swift in Sources */,
 				723B324D291E7FBE004314E9 /* Movement.swift in Sources */,
 				723B3243291E7EE5004314E9 /* GameController.swift in Sources */,
+				723B3288292025D4004314E9 /* Lighting.metal in Sources */,
 				723B325B291E8055004314E9 /* TextureController.swift in Sources */,
 				723B3259291E8046004314E9 /* Submesh.swift in Sources */,
 				723B326E291E80DB004314E9 /* DebugLights.swift in Sources */,
