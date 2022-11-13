@@ -18,6 +18,8 @@ float3 phongLighting(float3 normal,
     float3 diffuseColor = 0;
     float3 ambientColor = 0;
     float3 specularColor = 0;
+    float materialShininess = 32;
+    float3 materialSpecularColor = float3(1, 1, 1);
     for (uint i = 0; i < params.lightCount; i++) {
         Light light = lights[i];
         switch (light.type) {
@@ -29,6 +31,21 @@ float3 phongLighting(float3 normal,
                   saturate(-dot(lightDirection, normal));
                 // 3
                 diffuseColor += light.color * baseColor * diffuseIntensity;
+                if (diffuseIntensity > 0) {
+                  // 1 (R)
+                  float3 reflection =
+                      reflect(lightDirection, normal);
+                  // 2 (V)
+                  float3 viewDirection =
+                      normalize(params.cameraPosition);
+                  // 3
+                  float specularIntensity =
+                      pow(saturate(dot(reflection, viewDirection)),
+                          materialShininess);
+                  specularColor +=
+                      light.specularColor * materialSpecularColor
+                        * specularIntensity;
+                }
                 break;
             }
             case Point: {
@@ -38,6 +55,7 @@ float3 phongLighting(float3 normal,
                 break;
             }
             case Ambient: {
+                ambientColor += light.color;
                 break;
             }
             case unused: {
