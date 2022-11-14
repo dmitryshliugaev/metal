@@ -23,9 +23,19 @@ struct SceneLighting {
         return light
     }()
     
+    let redLight: Light = {
+      var light = Self.buildDefaultLight()
+      light.type = Point
+      light.position = [-0.8, 0.76, -0.18]
+      light.color = [1, 0, 0]
+      light.attenuation = [0.5, 2, 1]
+      return light
+    }()
+    
     init() {
         lights.append(sunlight)
         lights.append(ambientLight)
+        lights.append(redLight)
     }
     
     static func buildDefaultLight() -> Light {
