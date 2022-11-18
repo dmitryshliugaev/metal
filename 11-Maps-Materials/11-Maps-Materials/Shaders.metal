@@ -75,7 +75,6 @@ fragment float4 fragment_main(
       in.uv * params.tiling).rgb;
     }
     normal = normalize(normal);
-    return float4(normal, 1);
     
     float3 color = phongLighting(
         normalDirection,
