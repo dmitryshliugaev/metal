@@ -16,6 +16,8 @@ struct VertexIn {
     float3 normal [[attribute(Normal)]];
     float2 uv [[attribute(UV)]];
     float3 color [[attribute(Color)]];
+    float3 tangent [[attribute(Tangent)]];
+    float3 bitangent [[attribute(Bitangent)]];
 };
 
 struct VertexOut {
@@ -24,11 +26,13 @@ struct VertexOut {
     float3 color;
     float3 worldPosition;
     float3 worldNormal;
+    float3 worldTangent;
+    float3 worldBitangent;
 };
 
 vertex VertexOut vertex_main(
-    const VertexIn in [[stage_in]],
-    constant Uniforms &uniforms [[buffer(UniformsBuffer)]])
+                             const VertexIn in [[stage_in]],
+                             constant Uniforms &uniforms [[buffer(UniformsBuffer)]])
 {
     float4 position =
     uniforms.projectionMatrix * uniforms.viewMatrix
@@ -38,50 +42,56 @@ vertex VertexOut vertex_main(
         .uv = in.uv,
         .color = in.color,
         .worldPosition = (uniforms.modelMatrix * in.position).xyz,
-        .worldNormal = uniforms.normalMatrix * in.normal
+        .worldNormal = uniforms.normalMatrix * in.normal,
+        .worldTangent = uniforms.normalMatrix * in.tangent,
+        .worldBitangent = uniforms.normalMatrix * in.bitangent
     };
     return out;
 }
 
 fragment float4 fragment_main(
-    VertexOut in [[stage_in]],
-    constant Params &params [[buffer(ParamsBuffer)]],
-    constant Light *lights [[buffer(LightBuffer)]],
-    texture2d<float> baseColorTexture [[texture(BaseColor)]],
-    texture2d<float> normalTexture [[texture(NormalTexture)]])
+                              VertexOut in [[stage_in]],
+                              constant Params &params [[buffer(ParamsBuffer)]],
+                              constant Light *lights [[buffer(LightBuffer)]],
+                              texture2d<float> baseColorTexture [[texture(BaseColor)]],
+                              texture2d<float> normalTexture [[texture(NormalTexture)]])
 {
     constexpr sampler textureSampler(
-        filter::linear,
-        address::repeat,
-        mip_filter::linear,
-        max_anisotropy(8));
+                                     filter::linear,
+                                     address::repeat,
+                                     mip_filter::linear,
+                                     max_anisotropy(8));
     
     float3 baseColor;
     if (is_null_texture(baseColorTexture)) {
         baseColor = in.color;
     } else {
         baseColor = baseColorTexture.sample(
-            textureSampler,
-            in.uv * params.tiling).rgb;
+                                            textureSampler,
+                                            in.uv * params.tiling).rgb;
     }
-    float3 normalDirection = normalize(in.worldNormal);
     
     float3 normal;
     if (is_null_texture(normalTexture)) {
-      normal = in.worldNormal;
+        normal = in.worldNormal;
     } else {
-      normal = normalTexture.sample(
-      textureSampler,
-      in.uv * params.tiling).rgb;
+        normal = normalTexture.sample(
+                                      textureSampler,
+                                      in.uv * params.tiling).rgb;
+        normal = normal * 2 - 1;
+        normal = float3x3(
+                          in.worldTangent,
+                          in.worldBitangent,
+                          in.worldNormal) * normal;
     }
     normal = normalize(normal);
     
     float3 color = phongLighting(
-        normalDirection,
-        in.worldPosition,
-        params,
-        lights,
-        baseColor
-    );
+                                 normal,
+                                 in.worldPosition,
+                                 params,
+                                 lights,
+                                 baseColor
+                                 );
     return float4(color, 1);
 }
