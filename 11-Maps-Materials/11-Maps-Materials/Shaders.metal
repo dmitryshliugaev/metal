@@ -54,21 +54,21 @@ fragment float4 fragment_main(
                               constant Params &params [[buffer(ParamsBuffer)]],
                               constant Light *lights [[buffer(LightBuffer)]],
                               texture2d<float> baseColorTexture [[texture(BaseColor)]],
-                              texture2d<float> normalTexture [[texture(NormalTexture)]])
+                              texture2d<float> normalTexture [[texture(NormalTexture)]],
+                              constant Material &_material [[buffer(MaterialBuffer)]])
 {
+    Material material = _material;
+
     constexpr sampler textureSampler(
                                      filter::linear,
                                      address::repeat,
                                      mip_filter::linear,
                                      max_anisotropy(8));
     
-    float3 baseColor;
-    if (is_null_texture(baseColorTexture)) {
-        baseColor = in.color;
-    } else {
-        baseColor = baseColorTexture.sample(
-                                            textureSampler,
-                                            in.uv * params.tiling).rgb;
+    if (!is_null_texture(baseColorTexture)) {
+      material.baseColor = baseColorTexture.sample(
+      textureSampler,
+      in.uv * params.tiling).rgb;
     }
     
     float3 normal;
@@ -91,7 +91,7 @@ fragment float4 fragment_main(
                                  in.worldPosition,
                                  params,
                                  lights,
-                                 baseColor
+                                 material
                                  );
     return float4(color, 1);
 }
