@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72E885DC292E72F9005A8E49 /* PBR.metal in Sources */ = {isa = PBXBuildFile; fileRef = 72F69BDD292564040025F261 /* PBR.metal */; };
 		72F69BB9292561F20025F261 /* _1_Maps_MaterialsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F69BB8292561F20025F261 /* _1_Maps_MaterialsApp.swift */; };
 		72F69BBB292561F20025F261 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F69BBA292561F20025F261 /* ContentView.swift */; };
 		72F69BBD292561F40025F261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F69BBC292561F40025F261 /* Assets.xcassets */; };
@@ -257,6 +258,7 @@
 			files = (
 				72F69BF2292565460025F261 /* VertexDescriptor.swift in Sources */,
 				72F69BEA292564FF0025F261 /* Submesh.swift in Sources */,
+				72E885DC292E72F9005A8E49 /* PBR.metal in Sources */,
 				72F69BC7292562E50025F261 /* MetalView.swift in Sources */,
 				72F69BBB292561F20025F261 /* ContentView.swift in Sources */,
 				72F69C00292565C10025F261 /* Renderer.swift in Sources */,
