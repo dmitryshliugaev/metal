@@ -12,6 +12,10 @@ struct GameScene {
     lazy var cottage: Model = {
         Model(name: "cube.obj")
     }()
+    
+    lazy var helmet: Model = {
+      Model(name: "helmet.obj")
+    }()
     var models: [Model] = []
     var camera = ArcballCamera()
     
@@ -28,7 +32,7 @@ struct GameScene {
         camera.target = .zero
         
         camera.transform = defaultView
-        models = [cottage]
+        models = [helmet]
     }
     
     mutating func update(size: CGSize) {

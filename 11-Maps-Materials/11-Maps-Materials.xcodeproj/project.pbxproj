@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		72E885DC292E72F9005A8E49 /* PBR.metal in Sources */ = {isa = PBXBuildFile; fileRef = 72F69BDD292564040025F261 /* PBR.metal */; };
+		72E885E1292FE57F005A8E49 /* helmet.mtl in Resources */ = {isa = PBXBuildFile; fileRef = 72E885DE292FE57F005A8E49 /* helmet.mtl */; };
+		72E885E2292FE57F005A8E49 /* helmet.obj in Resources */ = {isa = PBXBuildFile; fileRef = 72E885DF292FE57F005A8E49 /* helmet.obj */; };
+		72E885E3292FE57F005A8E49 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 72E885E0292FE57F005A8E49 /* license.txt */; };
 		72F69BB9292561F20025F261 /* _1_Maps_MaterialsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F69BB8292561F20025F261 /* _1_Maps_MaterialsApp.swift */; };
 		72F69BBB292561F20025F261 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F69BBA292561F20025F261 /* ContentView.swift */; };
 		72F69BBD292561F40025F261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72F69BBC292561F40025F261 /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		72E885DE292FE57F005A8E49 /* helmet.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = helmet.mtl; sourceTree = "<group>"; };
+		72E885DF292FE57F005A8E49 /* helmet.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = helmet.obj; sourceTree = "<group>"; };
+		72E885E0292FE57F005A8E49 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		72F69BB5292561F20025F261 /* 11-Maps-Materials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "11-Maps-Materials.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72F69BB8292561F20025F261 /* _1_Maps_MaterialsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _1_Maps_MaterialsApp.swift; sourceTree = "<group>"; };
 		72F69BBA292561F20025F261 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +96,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72E885DD292FE57F005A8E49 /* helmet */ = {
+			isa = PBXGroup;
+			children = (
+				72E885DE292FE57F005A8E49 /* helmet.mtl */,
+				72E885DF292FE57F005A8E49 /* helmet.obj */,
+				72E885E0292FE57F005A8E49 /* license.txt */,
+			);
+			path = helmet;
+			sourceTree = "<group>";
+		};
 		72F69BAC292561F20025F261 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +169,7 @@
 		72F69BCE292563C10025F261 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				72E885DD292FE57F005A8E49 /* helmet */,
 				72F69BCF292563C10025F261 /* Cottage */,
 				72F69BD4292563C10025F261 /* Cube */,
 			);
@@ -237,8 +254,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72E885E3292FE57F005A8E49 /* license.txt in Resources */,
 				72F69BC0292561F40025F261 /* Preview Assets.xcassets in Resources */,
 				72F69BD7292563C20025F261 /* cottage2.mtl in Resources */,
+				72E885E1292FE57F005A8E49 /* helmet.mtl in Resources */,
 				72F69BDC292563C20025F261 /* cube.mtl in Resources */,
 				72F69BE6292564D90025F261 /* Textures.xcassets in Resources */,
 				72F69BBD292561F40025F261 /* Assets.xcassets in Resources */,
@@ -246,6 +265,7 @@
 				72F69BDA292563C20025F261 /* cottage2.obj in Resources */,
 				72F69BD9292563C20025F261 /* cottage1.obj in Resources */,
 				72F69BDB292563C20025F261 /* cube.obj in Resources */,
+				72E885E2292FE57F005A8E49 /* helmet.obj in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

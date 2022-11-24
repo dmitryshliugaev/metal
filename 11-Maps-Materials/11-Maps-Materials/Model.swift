@@ -27,6 +27,7 @@ class Model: Transformable {
             url: assetURL,
             vertexDescriptor: meshDescriptor,
             bufferAllocator: allocator)
+        asset.loadTextures()
         var mtkMeshes: [MTKMesh] = []
         let mdlMeshes =
         asset.childObjects(of: MDLMesh.self) as? [MDLMesh] ?? []
