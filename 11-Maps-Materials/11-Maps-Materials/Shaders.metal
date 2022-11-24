@@ -50,27 +50,25 @@ vertex VertexOut vertex_main(
 }
 
 fragment float4 fragment_main(
-                              VertexOut in [[stage_in]],
                               constant Params &params [[buffer(ParamsBuffer)]],
                               constant Light *lights [[buffer(LightBuffer)]],
+                              VertexOut in [[stage_in]],
+                              constant Material &_material [[buffer(MaterialBuffer)]],
                               texture2d<float> baseColorTexture [[texture(BaseColor)]],
-                              texture2d<float> normalTexture [[texture(NormalTexture)]],
-                              constant Material &_material [[buffer(MaterialBuffer)]])
+                              texture2d<float> normalTexture [[texture(NormalTexture)]])
 {
-    Material material = _material;
-
     constexpr sampler textureSampler(
                                      filter::linear,
                                      address::repeat,
                                      mip_filter::linear,
                                      max_anisotropy(8));
     
+    Material material = _material;
     if (!is_null_texture(baseColorTexture)) {
-      material.baseColor = baseColorTexture.sample(
-      textureSampler,
-      in.uv * params.tiling).rgb;
+        material.baseColor = baseColorTexture.sample(
+                                                     textureSampler,
+                                                     in.uv * params.tiling).rgb;
     }
-    
     float3 normal;
     if (is_null_texture(normalTexture)) {
         normal = in.worldNormal;

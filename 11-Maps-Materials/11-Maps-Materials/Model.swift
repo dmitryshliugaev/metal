@@ -5,7 +5,6 @@
 //  Created by Dmitrii Shliugaev on 16/11/2022.
 //
 
-
 import MetalKit
 
 class Model: Transformable {
@@ -33,10 +32,10 @@ class Model: Transformable {
         asset.childObjects(of: MDLMesh.self) as? [MDLMesh] ?? []
         _ = mdlMeshes.map { mdlMesh in
             mdlMesh.addTangentBasis(
-              forTextureCoordinateAttributeNamed:
-                MDLVertexAttributeTextureCoordinate,
-              tangentAttributeNamed: MDLVertexAttributeTangent,
-              bitangentAttributeNamed: MDLVertexAttributeBitangent)
+                forTextureCoordinateAttributeNamed:
+                    MDLVertexAttributeTextureCoordinate,
+                tangentAttributeNamed: MDLVertexAttributeTangent,
+                bitangentAttributeNamed: MDLVertexAttributeBitangent)
             mtkMeshes.append(
                 try! MTKMesh(
                     mesh: mdlMesh,
@@ -82,21 +81,27 @@ extension Model {
             
             for submesh in mesh.submeshes {
                 
-                encoder.setFragmentTexture(
-                    submesh.textures.normal,
-                    index: NormalTexture.index)
-                
                 // set the fragment texture here
                 encoder.setFragmentTexture(
                     submesh.textures.baseColor,
                     index: BaseColor.index)
-                
+                encoder.setFragmentTexture(
+                    submesh.textures.normal,
+                    index: NormalTexture.index)
+                encoder.setFragmentTexture(
+                    submesh.textures.roughness,
+                    index: RoughnessTexture.index)
+                encoder.setFragmentTexture(
+                    submesh.textures.metallic,
+                    index: MetallicTexture.index)
+                encoder.setFragmentTexture(
+                    submesh.textures.ambientOcclusion,
+                    index: AOTexture.index)
                 var material = submesh.material
                 encoder.setFragmentBytes(
-                  &material,
-                  length: MemoryLayout<Material>.stride,
-                  index: MaterialBuffer.index)
-                
+                    &material,
+                    length: MemoryLayout<Material>.stride,
+                    index: MaterialBuffer.index)
                 encoder.drawIndexedPrimitives(
                     type: .triangle,
                     indexCount: submesh.indexCount,

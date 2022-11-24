@@ -43,9 +43,9 @@ fragment float4 fragment_PBR(
   constant Material &_material [[buffer(MaterialBuffer)]],
   texture2d<float> baseColorTexture [[texture(BaseColor)]],
   texture2d<float> normalTexture [[texture(NormalTexture)]],
-  texture2d<float> roughnessTexture [[texture(2)]],
-  texture2d<float> metallicTexture [[texture(3)]],
-  texture2d<float> aoTexture [[texture(4)]])
+  texture2d<float> roughnessTexture [[texture(RoughnessTexture)]],
+  texture2d<float> metallicTexture [[texture(MetallicTexture)]],
+  texture2d<float> aoTexture [[texture(AOTexture)]])
 {
   constexpr sampler textureSampler(
     filter::linear,

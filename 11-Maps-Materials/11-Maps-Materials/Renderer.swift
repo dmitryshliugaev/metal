@@ -5,7 +5,6 @@
 //  Created by Dmitrii Shliugaev on 16/11/2022.
 //
 
-
 import MetalKit
 
 class Renderer: NSObject {
@@ -115,7 +114,6 @@ extension Renderer {
         uniforms: uniforms,
         params: params)
     }
-
     renderEncoder.endEncoding()
     guard let drawable = view.currentDrawable else {
       return

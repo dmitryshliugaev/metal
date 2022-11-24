@@ -20,17 +20,16 @@ struct GameScene {
     var camera = ArcballCamera()
     
     var defaultView: Transform {
-        Transform(
-            position: [4.6, 2.3, -3.84],
-            rotation: [-0.05, 11.7, 0.0])
+      Transform(
+        position: [1.25, 1.13, -1.42],
+        rotation: [-0.32, 11.84, 0.0])
     }
     
     let lighting = SceneLighting()
     
     init() {
-        camera.distance = 3.5
-        camera.target = .zero
-        
+        camera.distance = 2
+        camera.target = [0, 0.5, 0]
         camera.transform = defaultView
         models = [helmet]
     }
