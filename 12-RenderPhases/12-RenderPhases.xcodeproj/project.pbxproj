@@ -42,6 +42,7 @@
 		727748BA294B927100BE0979 /* DebugLights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727748B9294B927100BE0979 /* DebugLights.swift */; };
 		727748BC294B928F00BE0979 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727748BB294B928F00BE0979 /* MetalView.swift */; };
 		727748BE294B929E00BE0979 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727748BD294B929E00BE0979 /* Options.swift */; };
+		727748C0294D010E00BE0979 /* RenderPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727748BF294D010E00BE0979 /* RenderPass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		727748B9294B927100BE0979 /* DebugLights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLights.swift; sourceTree = "<group>"; };
 		727748BB294B928F00BE0979 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		727748BD294B929E00BE0979 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		727748BF294D010E00BE0979 /* RenderPass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				72774886294B907F00BE0979 /* Camera.swift */,
 				72774888294B909100BE0979 /* PlayerCamera.swift */,
 				7277488A294B90A500BE0979 /* ForwardRenderPass.swift */,
+				727748BF294D010E00BE0979 /* RenderPass.swift */,
 				7277488C294B90B600BE0979 /* Pipelines.swift */,
 				7277488E294B90C800BE0979 /* Movement.swift */,
 				72774890294B90DA00BE0979 /* InputController.swift */,
@@ -258,6 +261,7 @@
 				7277489D294B916600BE0979 /* TextureController.swift in Sources */,
 				72774895294B90FD00BE0979 /* Model.swift in Sources */,
 				7277489B294B912E00BE0979 /* Submesh.swift in Sources */,
+				727748C0294D010E00BE0979 /* RenderPass.swift in Sources */,
 				72774889294B909100BE0979 /* PlayerCamera.swift in Sources */,
 				727748A8294B919100BE0979 /* Shaders.metal in Sources */,
 				7277487F294B902E00BE0979 /* GameController.swift in Sources */,

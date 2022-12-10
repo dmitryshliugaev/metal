@@ -7,7 +7,7 @@
 
 import MetalKit
 
-struct ForwardRenderPass {
+struct ForwardRenderPass: RenderPass {
   let label = "Forward Render Pass"
   var descriptor: MTLRenderPassDescriptor?
 
