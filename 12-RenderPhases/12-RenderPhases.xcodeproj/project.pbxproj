@@ -43,6 +43,8 @@
 		727748BC294B928F00BE0979 /* MetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727748BB294B928F00BE0979 /* MetalView.swift */; };
 		727748BE294B929E00BE0979 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727748BD294B929E00BE0979 /* Options.swift */; };
 		727748C0294D010E00BE0979 /* RenderPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727748BF294D010E00BE0979 /* RenderPass.swift */; };
+		727748C2294D045700BE0979 /* ObjectIdRenderPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727748C1294D045700BE0979 /* ObjectIdRenderPass.swift */; };
+		727748C4294D05D800BE0979 /* ObjectId.metal in Sources */ = {isa = PBXBuildFile; fileRef = 727748C3294D05D800BE0979 /* ObjectId.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		727748BB294B928F00BE0979 /* MetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalView.swift; sourceTree = "<group>"; };
 		727748BD294B929E00BE0979 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		727748BF294D010E00BE0979 /* RenderPass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenderPass.swift; sourceTree = "<group>"; };
+		727748C1294D045700BE0979 /* ObjectIdRenderPass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectIdRenderPass.swift; sourceTree = "<group>"; };
+		727748C3294D05D800BE0979 /* ObjectId.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ObjectId.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,11 +130,13 @@
 				72774876294B900200BE0979 /* Preview Content */,
 				7277487E294B902E00BE0979 /* GameController.swift */,
 				72774880294B904400BE0979 /* Renderer.swift */,
+				727748C3294D05D800BE0979 /* ObjectId.metal */,
 				72774882294B905B00BE0979 /* GameScene.swift */,
 				72774884294B906E00BE0979 /* SceneLighting.swift */,
 				72774886294B907F00BE0979 /* Camera.swift */,
 				72774888294B909100BE0979 /* PlayerCamera.swift */,
 				7277488A294B90A500BE0979 /* ForwardRenderPass.swift */,
+				727748C1294D045700BE0979 /* ObjectIdRenderPass.swift */,
 				727748BF294D010E00BE0979 /* RenderPass.swift */,
 				7277488C294B90B600BE0979 /* Pipelines.swift */,
 				7277488E294B90C800BE0979 /* Movement.swift */,
@@ -269,9 +275,11 @@
 				727748B6294B922300BE0979 /* MathLibrary.swift in Sources */,
 				727748B8294B924900BE0979 /* DebugLights.metal in Sources */,
 				72774885294B906E00BE0979 /* SceneLighting.swift in Sources */,
+				727748C4294D05D800BE0979 /* ObjectId.metal in Sources */,
 				72774887294B907F00BE0979 /* Camera.swift in Sources */,
 				7277488B294B90A500BE0979 /* ForwardRenderPass.swift in Sources */,
 				727748BA294B927100BE0979 /* DebugLights.swift in Sources */,
+				727748C2294D045700BE0979 /* ObjectIdRenderPass.swift in Sources */,
 				72774871294B900100BE0979 /* _2_RenderPhasesApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

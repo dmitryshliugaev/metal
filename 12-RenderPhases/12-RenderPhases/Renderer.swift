@@ -17,6 +17,8 @@ class Renderer: NSObject {
   var params = Params()
 
   var forwardRenderPass: ForwardRenderPass
+    
+    var objectIdRenderPass: ObjectIdRenderPass
 
   init(metalView: MTKView, options: Options) {
     guard
@@ -33,6 +35,7 @@ class Renderer: NSObject {
     Self.library = library
     self.options = options
     forwardRenderPass = ForwardRenderPass(view: metalView)
+      objectIdRenderPass = ObjectIdRenderPass()
     super.init()
     metalView.clearColor = MTLClearColor(
       red: 0.93,
@@ -49,6 +52,7 @@ extension Renderer {
     _ view: MTKView,
     drawableSizeWillChange size: CGSize
   ) {
+      objectIdRenderPass.resize(view: view, size: size)
     forwardRenderPass.resize(view: view, size: size)
   }
 
@@ -67,6 +71,12 @@ extension Renderer {
     }
 
     updateUniforms(scene: scene)
+      
+      objectIdRenderPass.draw(
+        commandBuffer: commandBuffer,
+        scene: scene,
+        uniforms: uniforms,
+        params: params)
 
     forwardRenderPass.descriptor = descriptor
     forwardRenderPass.draw(
